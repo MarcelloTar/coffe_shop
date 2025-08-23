@@ -55,3 +55,55 @@
     top: -25px;
     left: -64px;
 }
+
+@media screen and (max-width: 1200px) {
+    .section4_product{
+        width: 420px;
+    }
+    .section4_name_coffe{
+        font-size: 25px;
+    }
+}
+@media screen and (max-width: 1070px) {
+    .section4_product{
+        width: 380px;
+    }
+    .section4_product_img{
+        top: -22px;
+        left: -29px;
+        width: 120px;
+    }
+    .section4_name_coffe{
+        font-size: 20px;
+        margin-top: 20px;
+    } 
+    .price{
+        margin-bottom: 10px;
+    }
+}
+@media screen and (max-width: 910px) {
+    .section4__container{
+        height: max-content;
+        padding: 10px 0;
+    }
+    .section4_products{
+        grid-template-columns: max-content;
+        grid-template-rows: repeat(6, max-content);
+        justify-content: center;
+        gap: 50px;
+    }
+    .section4_product{
+        width: 500px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .section4__container h1{
+        font-size: 45px;
+    }
+}
+@media screen and (max-width: 585px) {
+    .section4__container h1{
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+}

@@ -117,3 +117,40 @@
 .email_box{
     margin-bottom: 21px;
 }
+
+
+@media screen and (max-width: 1110px) {
+    .section8__container{
+        padding: 0 10px;
+    }
+}
+@media screen and (max-width: 1030px) {
+    .section8__container{
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+    }
+}
+@media screen and (max-width: 768px) {
+    .section8_left img{
+        width: 398px;
+    }
+}
+@media screen and (max-width: 450px) {
+    .section8_left{
+        display: none;
+    } 
+}
+@media screen and (max-width: 385px) {
+    .person_box input, .date_box input, .email_box input{
+        width: 277px;
+    }
+    .person_box img, .date_box img, .email_box img{
+        left: 255px;
+    }
+}
+@media screen and (max-width: 330px) {
+    .section8_right h1{
+        font-size: 23px;
+    }
+}

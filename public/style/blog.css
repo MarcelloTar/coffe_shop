@@ -55,3 +55,53 @@
     width: 82%;
     margin-bottom: 9px;
 }
+
+@media screen and (max-width: 1110px) {
+    .section9_card_box{
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 20px;
+        padding: 0 20px;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .section9 h1{
+        margin-bottom: 20px;
+        font-size: 35px;
+    }    
+}
+
+@media screen and (max-width: 575px) {
+    .section9 h1 {
+        font-size: 25px;
+    }
+}
+@media screen and (max-width: 450px) {
+    .section9_card_top img{
+        width: 330px;
+    }
+    .section9_card{
+        width: 330px;
+    }
+    .section9_card_box{
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .section9_card {
+        width: 300px;
+        height: 417px;
+    }
+    .section9_card_bottom h2{
+        width: 100%;
+        font-size: 16px;
+    }
+    .section9_card_top img{
+        width: 300px;
+    }
+    .section9 h1{
+        font-size: 20px;
+    }
+}

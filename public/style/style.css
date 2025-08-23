@@ -21,7 +21,7 @@ input:focus{
 	padding-right: 15px;*/
 } 
 body{
-    overflow-x: hidden;
+    overflow-x: hidden !important;
 }
 
 
@@ -157,69 +157,12 @@ body{
     align-items: center;
 } */
 
-
-
-
-
-
-
-
-
-
-/* @media screen and (max-width: 1200px) {
-    .section4_product{
-        width: 420px;
-    }
-    .section4_name_coffe{
-        font-size: 25px;
-    }
-}
-@media screen and (max-width: 1110px) {
-    .cafena_best_product_box{
-        padding: 0 10px;
-    }
-    .section6_products{
-        padding: 0 10px;
-    } 
-    .section8__container{
-        padding: 0 10px;
-    }
-    .section9_card_box{
-        flex-wrap: wrap;
-        justify-content: space-around;
-        gap: 20px;
-        padding: 0 20px;
-    }
-
+/* @media screen and (max-width: 1110px) {
     .section5__container{
         padding: 0 20px;
     }
     .section5_left h1{
         font-size: 45px;
-    }
-}
-@media screen and (max-width: 1070px) {
-    .section4_product{
-        width: 380px;
-    }
-    .section4_product_img{
-        top: -22px;
-        left: -29px;
-        width: 120px;
-    }
-    .section4_name_coffe{
-        font-size: 20px;
-        margin-top: 20px;
-    } 
-    .price{
-        margin-bottom: 10px;
-    }
-}
-@media screen and (max-width: 1030px) {
-    .section8__container{
-        flex-direction: column;
-        gap: 20px;
-        justify-content: center;
     }
 }
 @media screen and (max-width: 1024px) {
@@ -238,70 +181,14 @@ body{
         margin: 0 auto;
     }
 }
-@media screen and (max-width: 990px) {
-    .section6_products{
-        justify-content: space-around;
-    }
-}
-@media screen and (max-width: 910px) {
-    .section4__container{
-        height: max-content;
-        padding: 10px 0;
-    }
-    .section4_products{
-        grid-template-columns: max-content;
-        grid-template-rows: repeat(6, max-content);
-        justify-content: center;
-        gap: 50px;
-    }
-    .section4_product{
-        width: 500px;
-    }
-
-}
-@media screen and (max-width: 850px) {
-    .black_title_page{
-        padding: 12px 22px;
-    }
-    .cafena_best_product_box h1{
-        font-size: 40px;
-    }
-    .cafena_best_product_box{
-        margin-bottom: 30px;
-    }
-}
 @media screen and (max-width: 768px) {
     .section3__container p{
         width: 92%;
     }
-    .section4__container h1{
-        font-size: 45px;
-    }
-    .section8_left img{
-        width: 398px;
-    }
-}
-@media screen and (max-width: 760px) {
-    .section9 h1{
-        margin-bottom: 20px;
-        font-size: 35px;
-    }    
 }
 @media screen and (max-width: 630px) {
     .section3__container h1{
         font-size: 35px;
-    }
-    .cafena_best_product_box{
-        flex-direction: column-reverse;
-    }
-    .cafena_best_product_box p{
-        margin-bottom: 10px;
-    }
-}
-@media screen and (max-width: 585px) {
-    .section4__container h1{
-        font-size: 30px;
-        margin-bottom: 30px;
     }
 }
 @media screen and (max-width: 575px) {
@@ -309,52 +196,13 @@ body{
         width: 125px;
         height: 35px;
     }
-    
     .section3__container p {
         width: 99%;
-    }
-    .section9 h1 {
-        font-size: 25px;
-    }
-}
-@media screen and (max-width: 460px) {
-    .section4_product{
-        width: 320px;
-        padding-left: 85px;
-    }
-    .section4_product_img{
-        top: -19px;
-        left: -29px;
-        width: 100px;
-    }
-    .section4_name_coffe{
-        margin-top: 13px;
-        font-size: 16px;
-
-    }
-    .price{
-        margin-bottom: 10px;
-        font-size: 16px;
     }
 }
 @media screen and (max-width: 450px) {
     .section3__container p {
         font-size: 14px;
-    }
-    .cafena_best_product_box h1{
-        font-size: 30px;
-    }
-    .section8_left{
-        display: none;
-    }
-    .section9_card_top img{
-        width: 330px;
-    }
-    .section9_card{
-        width: 330px;
-    }
-    .section9_card_box{
-        padding: 0;
     }
 }
 
@@ -366,53 +214,4 @@ body{
     .section3__container p {
         font-size: 12px;
     }
-}
-@media screen and (max-width: 385px) {
-    .section4__container h1{
-        font-size: 26px;
-        margin-bottom: 10px;
-    }
-    .section4_name_coffe{
-        font-size: 14px;
-    }
-    .section4_product{
-        width: 270px;
-    }
-
-    .person_box input, .date_box input, .email_box input{
-        width: 277px;
-    }
-    .person_box img, .date_box img, .email_box img{
-        left: 255px;
-    }
-}
-@media screen and (max-width: 350px) {
-    .section4_product_img{
-        top: -9px;
-        left: -21px;
-        width: 85px;
-    }
-    .section9_card {
-        width: 300px;
-        height: 417px;
-    }
-    .section9_card_bottom h2{
-        width: 100%;
-        font-size: 16px;
-    }
-    .section9_card_top img{
-        width: 300px;
-    }
-    .section9 h1{
-        font-size: 20px;
-    }
-}
-@media screen and (max-width: 330px) {
-    .cafena_best_product_box h1{
-        font-size: 25px;
-    }
-    .section8_right h1{
-        font-size: 23px;
-    }
-}
- */
+} */

@@ -57,3 +57,15 @@
 .section6_product_bottom_price_number{
     color: #eab665;    
 }
+
+
+@media screen and (max-width: 1110px) {
+    .section6_products{
+        padding: 0 10px;
+    } 
+}
+@media screen and (max-width: 990px) {
+    .section6_products{
+        justify-content: space-around;
+    }
+}
