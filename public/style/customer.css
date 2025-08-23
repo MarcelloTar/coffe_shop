@@ -1,0 +1,119 @@
+@import url('style.css');
+@import url('header.css');
+@import url('footer.css');
+
+.section7__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 60vh;
+}
+.section7_slider_box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.section7_title{
+    color: #1c1a1a;
+    font-size: 55px;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 31px;
+}
+.section7_slider_box_description{
+    color: #5c5c5c;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 1px;
+    width: 60%;
+    text-align: center;
+    margin-bottom: 39px;
+}
+
+.section7_slider_box_name{
+    color: #1c1a1a;
+    letter-spacing: 1px;
+    margin-top: 8px;
+}
+
+.section7_slider_box_button{
+    position: absolute;
+    border: 3px solid #D48A5C;
+    border-radius: 50%;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #d48a5c;
+}
+.section7_slider_box_button:hover{
+    color: #a05729;
+    border: 3px solid #a05729;
+}
+.section7_slider_box_button_prew{
+    left: -2.9%;
+}
+.section7_slider_box_button_next{
+    left: 98%;
+}
+
+
+.section8__container{
+    height: 50vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.reservation{
+    color: #d48a5c;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.section8_right h1{
+    color: #1c1a1a;
+    font-size: 29px;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-bottom: 21px;
+}
+.section8_right input{
+    width: 362px;
+    height: 50px;
+    padding: 16px 18px;
+    padding-right: 20px;
+    border: none;
+}
+.section8_right input:not(:last-child){
+    margin-bottom: 10px;
+}
+.section8_right input:focus{
+    outline: none;
+}
+.section8_right img{
+    position: absolute;
+}
+.person_box, .date_box, .email_box{
+    position: relative;
+}
+.person_box img, .date_box img, .email_box img{
+    left: 330px;
+} 
+.person_box img{
+    top: 13px;
+}
+.date_box img{
+    top: 13px;
+}
+.email_box img{
+    top: 17px;
+}
+.email_box{
+    margin-bottom: 21px;
+}

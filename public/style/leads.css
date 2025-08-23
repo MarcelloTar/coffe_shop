@@ -1,0 +1,44 @@
+@import url('style.css');
+.header{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.main_box{
+    display: flex;
+    justify-content: space-between;
+    background-color: #E09446;
+    padding: 10px 20px;
+    border-radius: 20px;
+    align-items: center;
+}
+.main_box:not(:last-child) {
+    margin-bottom: 10px;
+}
+.main_box_number_email{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.email, .date{
+    color: #dfdcdc;
+}
+.email{
+    font-size: 20px;
+}
+.date{
+    font-size: 14px;
+}
+.number{
+    font-weight: bold;
+    font-size: 20px;
+    color: #fff;
+}
+
+.list_of_all_subscribers{
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+.no_email{
+    font-size: 20px;
+}

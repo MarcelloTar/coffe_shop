@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+button{
+    border: none;
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+}
+.main{
+    display: flex;
+    height: 100vh;
+}
+.main_left{
+    background-color: rgb(255, 255, 255);
+    border-right: 2px solid #2b2b2b8a;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 20%;
+    gap: 10px;
+    padding-top: 30px;
+}
+.main_left button, a{
+    background-color: #000;
+    color: #fff;
+    border-radius: 10px;
+    width: 80%;
+    padding: 10px;
+    text-align: left;
+}
+.main_right{
+    height: 100%;
+    width: 80%;
+    background-color: #c2c1c1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+.Followers_box button{
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px;
+    width: 155px;
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+.Followers{
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px;
+    padding: 9px 18px;
+    margin-bottom: 10px;
+}
+#textarea{
+    width: 650px;
+    height: 400px;
+    display: block;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    resize: none;
+    font-size: 18px;
+    padding: 5px;
+}
+#textarea:focus{
+    outline: none;
+}
+#send_message{
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px;
+    width: 100px;
+    padding: 5px 0;
+}
+
+
+
+
+
+
+
+
+
+button:hover, a:hover{
+    background-color: #272727 !important;
+}

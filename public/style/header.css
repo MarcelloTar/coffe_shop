@@ -1,0 +1,32 @@
+
+
+.header{
+    background-color: #F4F1EE;
+}
+.header__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header_menu_navigator{
+    display: flex;
+    align-items: center;
+}
+.header_menu_navigator a{
+    letter-spacing: 1px;
+}
+.header_menu_navigator a:hover{
+    color: #363636;
+}
+.header_menu_navigator:first-child a:not(:last-child){
+    margin-right: 55px;
+}
+.header_menu_navigator:last-child a:not(:last-child){
+    margin-right: 40px;
+}
+.header_menu_navigator:last-child a:last-child{
+    margin-right: 72px;
+}
+.header_menu_navigator:last-child img:not(:last-child){
+    margin-right: 68px;
+}

@@ -1,0 +1,418 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+button{
+    border: none;
+    cursor: pointer;
+}
+input:focus{
+    outline: none;
+}
+[class*="__container"] {
+	max-width: 1110px;
+	margin: 0 auto;
+	/* padding-left: 15px;
+	padding-right: 15px;*/
+} 
+body{
+    overflow-x: hidden;
+}
+
+
+
+
+
+/* .section2__container{
+    height: 50vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.section2_card{
+    background: url('img/section2_card.png') no-repeat;
+    width: 350px;
+    height: 256px;
+    position: relative;
+}
+.section2_card:nth-child(2){
+    background: url('./img/section2_card2.png') no-repeat;
+}
+.section2_card:last-child{
+    background: url('./img/section2_card3.png') no-repeat;
+}
+.section2_card::after{
+    content: '';
+    background-color: #D48A5C;
+    width: 350px;
+    height: 256px;
+    position: absolute;
+    top: 15px;
+    left: -15px;
+    z-index: -1;
+}
+.section2_number{
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-top: 16px;
+    margin-left: 16px;
+}
+.section2_text{
+    color: #232020;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-left: 16px;
+}
+.section2_text2{
+    color: #fff;
+    font-size: 12px;
+    line-height: 10px;
+    width: 57%;
+    transform: translateY(160px);
+    margin-left: 16px;
+}
+
+.section3 {
+    background: url('img/background.png') no-repeat;
+    background-size: cover;
+}
+.section3__container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.section3__container h1{
+    font-size: 55px;
+    line-height: 65px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+.section3_description{
+    color: #141313;
+    line-height: 26px;
+    letter-spacing: 1px;
+    width: 56%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.explore_more{
+    background-color: #232020;
+    width: 152px;
+    height: 46px;
+    color: #FFFFFF;
+    box-shadow: 0 3px 12px 0 rgba(0,0,0,.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+
+
+/* .section5 {
+}
+.section5__container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.section5_left h1{
+    color: #1c1a1a;
+    font-size: 55px;
+    letter-spacing: 2px;
+    width: 102%;
+    margin-bottom: 37px;
+}
+.section5_text {
+    color: #6f6f6f;
+    letter-spacing: 1px;
+    line-height: 26px;
+    margin-bottom: 7px;
+}
+.section5_text2 {
+    color: #141313;
+    line-height: 26px;
+    letter-spacing: 1px;
+    margin-bottom: 33px;
+    width: 90%; 
+
+}
+.discover_now{
+    color: #fff;
+    width: 138px;
+    height: 37px;
+    background-color: #232020;
+    box-shadow: 0 2px 10px 0 rgba(18,18,18,.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+
+
+
+
+
+
+
+
+
+/* @media screen and (max-width: 1200px) {
+    .section4_product{
+        width: 420px;
+    }
+    .section4_name_coffe{
+        font-size: 25px;
+    }
+}
+@media screen and (max-width: 1110px) {
+    .cafena_best_product_box{
+        padding: 0 10px;
+    }
+    .section6_products{
+        padding: 0 10px;
+    } 
+    .section8__container{
+        padding: 0 10px;
+    }
+    .section9_card_box{
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .section5__container{
+        padding: 0 20px;
+    }
+    .section5_left h1{
+        font-size: 45px;
+    }
+}
+@media screen and (max-width: 1070px) {
+    .section4_product{
+        width: 380px;
+    }
+    .section4_product_img{
+        top: -22px;
+        left: -29px;
+        width: 120px;
+    }
+    .section4_name_coffe{
+        font-size: 20px;
+        margin-top: 20px;
+    } 
+    .price{
+        margin-bottom: 10px;
+    }
+}
+@media screen and (max-width: 1030px) {
+    .section8__container{
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .section5__container{
+        flex-direction: column-reverse;
+    }
+    .section5_left h1{
+        text-align: center;
+    }
+    .section5_left p{
+        text-align: center;
+        width: 100%;
+    }
+    .discover_now{
+        display: block;
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width: 990px) {
+    .section6_products{
+        justify-content: space-around;
+    }
+}
+@media screen and (max-width: 910px) {
+    .section4__container{
+        height: max-content;
+        padding: 10px 0;
+    }
+    .section4_products{
+        grid-template-columns: max-content;
+        grid-template-rows: repeat(6, max-content);
+        justify-content: center;
+        gap: 50px;
+    }
+    .section4_product{
+        width: 500px;
+    }
+
+}
+@media screen and (max-width: 850px) {
+    .black_title_page{
+        padding: 12px 22px;
+    }
+    .cafena_best_product_box h1{
+        font-size: 40px;
+    }
+    .cafena_best_product_box{
+        margin-bottom: 30px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .section3__container p{
+        width: 92%;
+    }
+    .section4__container h1{
+        font-size: 45px;
+    }
+    .section8_left img{
+        width: 398px;
+    }
+}
+@media screen and (max-width: 760px) {
+    .section9 h1{
+        margin-bottom: 20px;
+        font-size: 35px;
+    }    
+}
+@media screen and (max-width: 630px) {
+    .section3__container h1{
+        font-size: 35px;
+    }
+    .cafena_best_product_box{
+        flex-direction: column-reverse;
+    }
+    .cafena_best_product_box p{
+        margin-bottom: 10px;
+    }
+}
+@media screen and (max-width: 585px) {
+    .section4__container h1{
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+}
+@media screen and (max-width: 575px) {
+    .section3__container button{
+        width: 125px;
+        height: 35px;
+    }
+    
+    .section3__container p {
+        width: 99%;
+    }
+    .section9 h1 {
+        font-size: 25px;
+    }
+}
+@media screen and (max-width: 460px) {
+    .section4_product{
+        width: 320px;
+        padding-left: 85px;
+    }
+    .section4_product_img{
+        top: -19px;
+        left: -29px;
+        width: 100px;
+    }
+    .section4_name_coffe{
+        margin-top: 13px;
+        font-size: 16px;
+
+    }
+    .price{
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 450px) {
+    .section3__container p {
+        font-size: 14px;
+    }
+    .cafena_best_product_box h1{
+        font-size: 30px;
+    }
+    .section8_left{
+        display: none;
+    }
+    .section9_card_top img{
+        width: 330px;
+    }
+    .section9_card{
+        width: 330px;
+    }
+    .section9_card_box{
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .section3__container h1{
+        font-size: 25px;
+        margin-bottom: 0;
+    }
+    .section3__container p {
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 385px) {
+    .section4__container h1{
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+    .section4_name_coffe{
+        font-size: 14px;
+    }
+    .section4_product{
+        width: 270px;
+    }
+
+    .person_box input, .date_box input, .email_box input{
+        width: 277px;
+    }
+    .person_box img, .date_box img, .email_box img{
+        left: 255px;
+    }
+}
+@media screen and (max-width: 350px) {
+    .section4_product_img{
+        top: -9px;
+        left: -21px;
+        width: 85px;
+    }
+    .section9_card {
+        width: 300px;
+        height: 417px;
+    }
+    .section9_card_bottom h2{
+        width: 100%;
+        font-size: 16px;
+    }
+    .section9_card_top img{
+        width: 300px;
+    }
+    .section9 h1{
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 330px) {
+    .cafena_best_product_box h1{
+        font-size: 25px;
+    }
+    .section8_right h1{
+        font-size: 23px;
+    }
+}
+ */

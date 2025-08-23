@@ -1,0 +1,59 @@
+@import url('style.css');
+@import url('header.css');
+@import url('footer.css');
+
+
+.section6 h1{
+    color: #1c1a1a;
+    font-size: 40px;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section6_products{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.section6_product_top{
+    background-color: #13131A;
+    width: 303px;
+    height: 267px;
+    position: relative;
+}
+
+
+.section6_product_top img{
+    position: absolute;
+    top: 7%;
+    left: 26%;
+}
+.section6_product_bottom{
+    width: 303px;
+}
+.section6_product_bottom_rating{
+    display: flex;
+    margin-top: 31px;
+    margin-bottom: 17px;
+}
+
+.section6_product_bottom_rating p{
+    color: #1c1a1a;
+    letter-spacing: 1px;
+}
+.section6_product_bottom_name{
+    color: #1c1a1a;
+    font-size: 24px;
+    letter-spacing: 1px;
+    margin-bottom: 13px;
+}
+
+.section6_product_bottom_price{
+    color: #1c1a1a;
+    letter-spacing: 1px;
+}
+.section6_product_bottom_price_number{
+    color: #eab665;    
+}

@@ -1,0 +1,57 @@
+@import url('style.css');
+@import url('header.css');
+@import url('footer.css');
+
+
+.section9{
+    margin-bottom: 97px;
+}
+.section9 p:first-child{
+    margin-bottom: 34px;
+}
+.section9 h1{
+    color: #1c1a1a;
+    font-size: 55px;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 58px;
+}
+.section9_card_box{
+    display: flex;
+    justify-content: space-between;
+}
+
+.section9_card{
+    width: 350px;
+    height: 454px;
+}
+.section9_card_bottom{
+    margin: 19px 27px;
+}
+.section9_card_box{
+    display: flex;
+    justify-content: space-between;
+}
+.section9_card{
+    background-color: #1C1A1A;
+}
+.section9_card p{
+    color: #fff;
+    font-size: 14px;
+}
+.section9_card p:not(:last-child){
+    margin-bottom: 9px;
+}
+.gold_color{
+    color: #eab665 !important;
+}
+
+.section9_card h2{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 1px;
+    width: 82%;
+    margin-bottom: 9px;
+}
