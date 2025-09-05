@@ -24,12 +24,13 @@
                     <a href="blog" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="500">From our blog</a>
                     
                     <img src="img/icon/serch.svg" alt="" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="600">
+                    <a href="registration_and_login"><img src="img/icon/user.svg" alt="" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="700" id="user"></a>
                     <img src="img/icon/menu.svg" alt="" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="700">
                 </div>
             </div>
         </header>
         <main class="main">
-              <section class="section7">
+            <section class="section7">
                 <div class="section7__container">
                     <h1 class="section7_title" data-aos="fade-right" data-aos-duration="2000">OUR CUSTOMER REVIEW</h1>
                     <div class="section7_slider_box">
@@ -58,10 +59,51 @@
                             <img src="img/icon/date.svg" alt="">
                         </div>
                         <div class="email_box" data-aos="fade-left" data-aos-duration="2000" data-aos-delay="900">
-                            <input id="email" type="email" placeholder="Email">
+                            <input id="email_reservation" type="email" placeholder="Email">
                             <img src="img/icon/email.svg" alt="">
                         </div>
                     </div>
+                </div>
+            </section>
+            <section class="section10">
+                <div class="section10__container">
+                    <h1>Write a review about the product</h1>
+                    <form action="" class="review_form">
+                        <div class="select_product_box">
+                            <select name="" id="select">
+                                <option value="" disabled selected hidden>select a product</option>
+                                <option value="vicaragua coffee beans">vicaragua coffee beans</option>
+                                <option value="americano coffee">americano coffee</option>
+                                <option value="virgin coffee gred">virgin coffee gred</option>
+                            </select>
+                        </div>
+                        <div class="comment_product_box">
+                            <textarea name="" id="review_textarea" placeholder="write a comment"></textarea>
+                        </div>
+                        <div class="rating_container">
+                            <div class="rating_box">
+                                <button class="rating_box_button" data-rating="1" type="button"><img src="img/icon/star.svg" alt=""></button>
+                                <p>Bad</p>
+                            </div>
+                            <div class="rating_box">
+                                <button class="rating_box_button" data-rating="2" type="button"><img src="img/icon/star.svg" alt=""></button>
+                                <p>So-so</p>
+                            </div>
+                            <div class="rating_box">
+                                <button class="rating_box_button" data-rating="3" type="button"><img src="img/icon/star.svg" alt=""></button>
+                                <p>Normal</p>
+                            </div>
+                            <div class="rating_box">
+                                <button class="rating_box_button" data-rating="4" type="button"><img src="img/icon/star.svg" alt=""></button>
+                                <p>Good</p>
+                            </div>
+                            <div class="rating_box">
+                                <button class="rating_box_button" data-rating="5" type="button"><img src="img/icon/star.svg" alt=""></button>
+                                <p>Great</p>
+                            </div>
+                        </div>
+                        <button class="review_button" type="button">leave a review</button>
+                    </form>
                 </div>
             </section>
         </main>
@@ -106,6 +148,7 @@
             disable: 'mobile'
         });
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.11.0/axios.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

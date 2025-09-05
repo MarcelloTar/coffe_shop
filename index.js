@@ -3,11 +3,17 @@ const express = require('express')
 const path = require('path')
 const fs = require('fs')
 const nodemailer = require('nodemailer')
+const TelegramBot = require('node-telegram-bot-api')
+const bodyParser = require('body-parser')
 
 const app = express()
 const port = process.env.PORT;
 const email = process.env.GMAIL_EMAIL
 const password = process.env.GMAIL_PASS
+
+const telegram_bot_api = process.env.TELEGRAM_BOT_API
+const bot = new TelegramBot(telegram_bot_api, {polling: true})
+
 
 let transtorter = nodemailer.createTransport({
     service: 'gmail',
@@ -22,6 +28,15 @@ app.use(express.static('public'))
 
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
+
+let chatId = undefined
+
+bot.on('message', msg => {
+    chatId = msg.chat.id
+    bot.sendMessage(chatId, 'я телеграм бот з сайту coffee shop')
+})
+
+
 
 app.get('/', (req, res) => {
 
@@ -115,6 +130,10 @@ app.get('/leads', (req, res) => {
 app.get('/form_administrator', (req, res) => {
     res.sendFile(path.join(__dirname, 'page', 'form_administrator.html'))
 })
+app.get('/registration_and_login', (req, res) => {
+    res.sendFile(path.join(__dirname, 'page', 'registration_and_login.html'))
+})
+
 
 app.post('/leads', (req, res) => {
     const {email, date} = req.body
@@ -148,6 +167,63 @@ app.post('/form_administrator', (req, res) => {
                 console.log('лист успішно відпралено', info.response);
             })
         }
+    })
+})
+app.post('/product_order', (req, res) => {
+    const {name, pieces, name_persone, email, address, price} = req.body
+    const data_orders = `ім'я кому відправлити: ${name_persone}; \n емейл: ${email}; \n адрес: ${address}; \n товар: ${name}; \n кількість товару: ${pieces}; \n ціна всього продукту: ${price}; \n
+    `
+    // console.log(data_orders);
+    
+    fs.appendFile('orders.txt', data_orders, err => {
+        if (err) {
+            return err
+        } 
+    })
+
+    bot.sendMessage(chatId, data_orders)
+    .then(() => {
+        console.log("повідомлення надіслано");
+        
+    })
+    .catch((err) => {
+        console.error(err);
+    })
+    
+})
+app.post('/review', (req, res) => {
+    const {name_product, review_text, rating, date} = req.body
+
+    const text = ` Назва продукту: ${name_product}; \n Відгук про продукт: ${review_text}; \n Рейтінг продукту: ${rating}; \n Час написання відгуку: ${date}; \n`
+    fs.appendFile('review_user.txt', text, err => {
+        if (err) {
+            return err
+        }
+    })
+    bot.sendMessage(chatId, text)
+    .then(() => {
+        console.log("повідомлення надіслано");
+        
+    })
+    .catch((err) => {
+        console.error(err);
+    })
+})
+app.post('/signup', (req, res) => {
+    const {name, email, password} = req.body
+    const text = `Ім'я користувача: ${name}; \n Емейл користувача: ${email}; \n Пароль користувача: ${password}; \n`
+    fs.appendFile('signup.txt', text, err => {
+        if (err) {
+            return err
+        }
+    })
+    bot.sendMessage(chatId, text)
+    .then(() => {
+        console.log("повідомлення надіслано");
+        
+    })
+    .catch((err) => {
+        console.error(err);
     })
 })
 

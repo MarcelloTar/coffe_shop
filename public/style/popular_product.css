@@ -107,3 +107,42 @@
         margin-bottom: 30px;
     }
 }
+@media screen and (max-width: 460px) {
+    .section4_product{
+        width: 320px;
+        padding-left: 85px;
+    }
+    .section4_product_img{
+        top: -19px;
+        left: -29px;
+        width: 100px;
+    }
+    .section4_name_coffe{
+        margin-top: 13px;
+        font-size: 16px;
+
+    }
+    .price{
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 385px) {
+    .section4__container h1{
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+    .section4_name_coffe{
+        font-size: 14px;
+    }
+    .section4_product{
+        width: 270px;
+    }
+}
+@media screen and (max-width: 350px) {
+    .section4_product_img{
+        top: -9px;
+        left: -21px;
+        width: 85px;
+    }
+}

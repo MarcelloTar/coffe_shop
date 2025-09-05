@@ -8,6 +8,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.11.0/axios.min.js"></script>
     <link rel="stylesheet" href="style/best_product.css">
+    <link rel="stylesheet" href="style/modal.css">
 </head>
 <body>
     <div class="wrapper">
@@ -25,6 +26,7 @@
                     <a href="blog" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="500">From our blog</a>
                     
                     <img src="img/icon/serch.svg" alt="" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="600">
+                    <a href="registration_and_login"><img src="img/icon/user.svg" alt="" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="700" id="user"></a>
                     <img src="img/icon/menu.svg" alt="" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="700">
                 </div>
             </div>
@@ -34,9 +36,9 @@
                 <div class="section6__container">
                     <h1 data-aos="fade-right" data-aos-duration="2000">Cafena Best Product</h1>
                     <div class="section6_products">
-                        <div class="section6_product" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="500">
+                        <div class="section6_product" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="500" data-name-product="vicaragua_coffee_beans">
                             <div class="section6_product_top">
-                                <img src="img/section6_card.png" alt="">
+                                <img src="img/vicaragua_coffee_beans2.png" alt="">
                             </div>
                             <div class="section6_product_bottom">
                                 <div class="section6_product_bottom_rating">
@@ -52,9 +54,9 @@
                             </div>
                         </div>
 
-                         <div class="section6_product" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="300">
+                         <div class="section6_product" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="300" data-name-product="americano_coffee">
                             <div class="section6_product_top">
-                                <img src="img/section6_card2.png" alt="">
+                                <img src="img/americano_coffee.png" alt="">
                             </div>
                             <div class="section6_product_bottom">
                                 <div class="section6_product_bottom_rating">
@@ -66,13 +68,13 @@
                                     <img src="img/icon/rating.svg" alt="">
                                 </div>
                                 <p class="section6_product_bottom_name">Americano Coffee</p>
-                                <p class="section6_product_bottom_price">Price: <span class="section6_product_bottom_price_number">$25</span></p>
+                                <p class="section6_product_bottom_price">Price: <span class="section6_product_bottom_price_number">$50</span></p>
                             </div>
                         </div>
 
-                         <div class="section6_product" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="200">
+                         <div class="section6_product" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="200" data-name-product="virgin_coffee_gred">
                             <div class="section6_product_top">
-                                <img src="img/section6_card3.png" alt="">
+                                <img src="img/virgin_coffee_gred.png" alt="">
                             </div>
                             <div class="section6_product_bottom">
                                 <div class="section6_product_bottom_rating">
@@ -84,7 +86,7 @@
                                     <img src="img/icon/rating.svg" alt="">
                                 </div>
                                 <p class="section6_product_bottom_name">Virgin Coffee Gred</p>
-                                <p class="section6_product_bottom_price">Price: <span class="section6_product_bottom_price_number">$25</span></p>
+                                <p class="section6_product_bottom_price">Price: <span class="section6_product_bottom_price_number">$100</span></p>
                             </div>
                         </div>
                     </div>
@@ -123,9 +125,12 @@
         <footer class="footer" style="border-top: 0.5px solid #EAB665;">
             <div class="footer2__container">
                 <p>ALL RIGHT RESERVED &copy; 2022</p>
-                
             </div>
         </footer>
+        <div class="modal none">
+            <div class="modal_content">
+            </div>
+        </div>
     </div>
     <script>
         AOS.init({

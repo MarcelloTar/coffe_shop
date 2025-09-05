@@ -119,6 +119,97 @@
 }
 
 
+.section10__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh;
+}
+
+.section10__container h1{
+    font-size: 40px;
+    width: 30%;
+    text-align: center;
+    margin-bottom: 53px;
+}
+.select_product_box{
+    position: relative;
+    margin-bottom: 19px;
+}
+.select_product_box::after{
+    content: '';
+    background: url('../img/icon/coffe.svg') no-repeat;
+    width: 25px;
+    height: 27px;
+    position: absolute;
+    top: 24%;
+    right: 1%;
+}
+
+#select{
+    width: 580px;
+    height: 46px;
+    appearance: none;
+    background-image: none;
+    font-size: 20px;
+    padding-left: 10px;
+    border: 1px solid #2a292973;
+}
+
+.comment_product_box{
+    position: relative;
+    margin-bottom: 44px;
+}
+.comment_product_box::after{
+    content: '';
+    background: url('../img/icon/review.svg') no-repeat;
+    width: 25px;
+    height: 27px;
+    position: absolute;
+    top: 3%;
+    right: 1%;
+}
+
+#review_textarea{
+    width: 580px;
+    height: 198px;
+    font-size: 20px;
+    padding: 5px 30px 5px 10px;
+    resize: none;
+}
+
+.rating_container{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 27px;
+}
+.rating_box{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.rating_box_button{
+    margin-bottom: 7px;
+}
+.review_button{
+    font-size: 20px;
+    color: #fff;
+    background-color: #232020;
+    width: 205px;
+    height: 48px;
+    border-radius: 10px;
+    margin: 0 auto;
+    display: block;
+}
+.activer_rating{
+    filter: brightness(0) saturate(100%) invert(59%) sepia(38%) saturate(964%) hue-rotate(350deg) brightness(97%) contrast(85%);
+}
+
+
+
+
+
 @media screen and (max-width: 1110px) {
     .section8__container{
         padding: 0 10px;
