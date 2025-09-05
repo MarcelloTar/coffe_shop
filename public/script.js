@@ -99,78 +99,83 @@ const products = {
 const modal = document.querySelector('.modal');
 
 if (modal) {
-        document.querySelectorAll('[data-name-product]').forEach(item => {
-            item.addEventListener('click', () => {
-                openModal()
-                const product = item.getAttribute('data-name-product')
-                let price = 0
-                document.querySelector('.modal_content').innerHTML = `
-                <form class="form_product">
-                    <p class="close">&times;</p>
-                    <img src="img/${products[product].src}.png" alt="">
-                    <p>Goods: ${products[product].name}</p>
-                    <p>Price: ${products[product].price}$</p>
-                    <div class="box_modal">
-                    <p style="margin: 0;">How many pieces:</p> 
-                    <input type="number" id="name_pieces_input" required name="pieces">
-                    </div>
-                    <div class="box_modal">
-                    <p style="margin: 0;" class="name_persone">The name of the person you are sending to:</p> 
-                    <input type="text" class="name_persone_input" required name="name_persone">
-                    </div>
-                    <div class="box_modal">
-                    <p style="margin: 0;" class="name_email">Your email:</p> 
-                    <input type="email" class="name_email_input" required name="email">
-                    </div>
-                    <div class="box_modal">
-                    <p style="margin: 0;" class="name_address">Address:</p> 
-                    <input type="text" class="name_address_input" required name="address">
-                    </div>
-                    <p>Final price: <span class="Final_price" >${price}</span>$</p>
-                    <button>Buy</button>
-                </form>
-                `
-                document.querySelector('#name_pieces_input').addEventListener('input', () => {
-                    if (document.querySelector('#name_pieces_input').value < 0) {
-                        document.querySelector('#name_pieces_input').value *= -1
-                    }
-                    price = +document.querySelector('#name_pieces_input').value * products[product].price
-                    document.querySelector('.Final_price').textContent = price
-                })
-
-                document.querySelector('.close').addEventListener('click', closeModal)
-
-                const form_product = document.querySelector('.form_product');
-                form_product.addEventListener('submit', (e) => {
-                    e.preventDefault()
-                    if (price > 0) {
-                        const formData = new FormData(form_product)
-                        const data_product = {
-                            name: products[product].name,
-                            pieces: formData.get('pieces'),
-                            name_persone: formData.get('name_persone'),
-                            email: formData.get('email'),
-                            address: formData.get('address'),
-                            price: price
-                        }
-                        console.log(data_product);
-
-                        axios.post('/product_order', data_product)
-                        .then(res => {
-                            console.log(res);
-
-                            alert('товар відправлено')
-                            
-                        })
-                        .catch(err => {
-                            console.log('помивка', err);
-                        })
-                    }
-                
-                })
+    document.querySelectorAll('[data-name-product]').forEach(item => {
+        item.addEventListener('click', () => {
+            open_modal()
+            const product = item.getAttribute('data-name-product')
+            let price = 0
+            document.querySelector('.modal_content').innerHTML = `
+            <form class="form_product">
+                <p class="close">&times;</p>
+                <img src="img/${products[product].src}.png" alt="">
+                <p>Goods: ${products[product].name}</p>
+                <p>Price: ${products[product].price}$</p>
+                <div class="box_modal">
+                <p style="margin: 0;">How many pieces:</p> 
+                <input type="number" id="name_pieces_input" required name="pieces">
+                </div>
+                <div class="box_modal">
+                <p style="margin: 0;" class="name_persone">The name of the person you are sending to:</p> 
+                <input type="text" class="name_persone_input" required name="name_persone">
+                </div>
+                <div class="box_modal">
+                <p style="margin: 0;" class="name_email">Your email:</p> 
+                <input type="email" class="name_email_input" required name="email">
+                </div>
+                <div class="box_modal">
+                <p style="margin: 0;" class="name_address">Address:</p> 
+                <input type="text" class="name_address_input" required name="address">
+                </div>
+                <p>Final price: <span class="Final_price" >${price}</span>$</p>
+                <button>Buy</button>
+            </form>
+            `
+            document.querySelector('#name_pieces_input').addEventListener('input', () => {
+                if (document.querySelector('#name_pieces_input').value < 0) {
+                    document.querySelector('#name_pieces_input').value *= -1
+                }
+                price = +document.querySelector('#name_pieces_input').value * products[product].price
+                document.querySelector('.Final_price').textContent = price
             })
-        })   
 
+            document.querySelector('.close').addEventListener('click', close_modal)
+
+            const form_product = document.querySelector('.form_product');
+            form_product.addEventListener('submit', (e) => {
+                e.preventDefault()
+                if (price > 0) {
+                    const formData = new FormData(form_product)
+                    const data_product = {
+                        name: products[product].name,
+                        pieces: formData.get('pieces'),
+                        name_persone: formData.get('name_persone'),
+                        email: formData.get('email'),
+                        address: formData.get('address'),
+                        price: price
+                    }
+                    console.log(data_product);
+
+                    axios.post('/product_order', data_product)
+                    .then(res => {
+                        console.log(res);
+
+                        alert('товар відправлено')
+                        
+                    })
+                    .catch(err => {
+                        console.log('помивка', err);
+                    })
+                }
+            
+            })
+        })
+    })   
+    document.addEventListener('keydown', (e) => {
+        console.log('gfd');
+        if (e.code == "Escape" && !modal.classList.contains('none')) { 
+            close_modal();
+        }
+    });
 }
 
 
@@ -245,11 +250,13 @@ if (review_button) {
 
 
 
-function openModal() {
+function open_modal() {
     modal.classList.remove('none')
     document.body.style.overflow = 'hidden'
 }
-function closeModal() {
+function close_modal() {
     modal.classList.add('none')
     document.body.style.overflow = ''
 }
+
+
