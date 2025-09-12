@@ -5,6 +5,7 @@ const fs = require('fs')
 const nodemailer = require('nodemailer')
 const TelegramBot = require('node-telegram-bot-api')
 const bodyParser = require('body-parser')
+const { rejects } = require('assert')
 
 const app = express()
 const port = process.env.PORT;
@@ -29,12 +30,63 @@ app.use(express.static('public'))
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
+let chat_id_administrator = process.env.CHAT_ID_ADMIN
 let chatId = undefined
-
-bot.on('message', msg => {
+let order = {}
+// bot.on('message', msg => {
+//     chatId = msg.chat.id
+//     console.log(chatId);
+    
+//     bot.sendMessage(chatId, 'я телеграм бот з сайту coffee shop')
+// })
+bot.onText(/\/star/, (msg) => {
     chatId = msg.chat.id
-    bot.sendMessage(chatId, 'я телеграм бот з сайту coffee shop')
+    bot.sendMessage(msg.chat.id, 'Привіт я телеграм бот з сайту coffee shop.', {
+        reply_markup: {
+            keyboard: [
+                ['/замовити']
+            ]
+        }
+    })
 })
+bot.onText(/\/замовити/, msg => {
+    chatId = msg.chat.id
+    bot.sendPhoto(chatId, './public/img/vicaragua_coffee_beans2.png',{
+        caption: 'Кава: vicaragua coffee beans \nЦіна: 25$ \nЯкщо хочете цю каву то введіть: vicaragua coffee beans'
+    })
+    bot.sendPhoto(chatId, './public/img/americano_coffee.png',{
+        caption: 'Кава: americano coffee \nЦіна: 50$ \nЯкщо хочете цю каву то введіть: americano coffee'
+    })
+    bot.sendPhoto(chatId, './public/img/virgin_coffee_gred.png',{
+        caption: 'Кава: virgin coffee gred \nЦіна: 100$ \nЯкщо хочете цю каву то введіть: virgin coffee gred'
+    })
+})
+
+bot_message_order('vicaragua coffee beans', 25)
+bot_message_order('americano coffee', 50)
+bot_message_order('virgin coffee gred', 100)
+
+
+
+
+
+bot.on('callback_query', (query) => {
+
+    switch (query.data) {
+        case 'cancel':
+            bot.sendMessage(query.message.chat.id, 'Якщо ви хочете скасувати замовлення то введіть: так, а якщо не хочете то: ні')
+            break;
+        default:
+            break;
+    }
+
+    bot.answerCallbackQuery(query.id)
+})
+
+
+
+
+
 
 
 
@@ -181,33 +233,19 @@ app.post('/product_order', (req, res) => {
         } 
     })
 
-    bot.sendMessage(chatId, data_orders)
-    .then(() => {
-        console.log("повідомлення надіслано");
-        
-    })
-    .catch((err) => {
-        console.error(err);
-    })
+    bot_message(chat_id_administrator, data_orders)
     
 })
 app.post('/review', (req, res) => {
     const {name_product, review_text, rating, date} = req.body
 
-    const text = ` Назва продукту: ${name_product}; \n Відгук про продукт: ${review_text}; \n Рейтінг продукту: ${rating}; \n Час написання відгуку: ${date}; \n`
+    const text = `Назва продукту: ${name_product}; \nВідгук про продукт: ${review_text}; \nРейтінг продукту: ${rating}; \nЧас написання відгуку: ${date}; \n`
     fs.appendFile('review_user.txt', text, err => {
         if (err) {
             return err
         }
     })
-    bot.sendMessage(chatId, text)
-    .then(() => {
-        console.log("повідомлення надіслано");
-        
-    })
-    .catch((err) => {
-        console.error(err);
-    })
+    bot_message(chat_id_administrator, text)
 })
 app.post('/signup', (req, res) => {
     const {name, email, password} = req.body
@@ -217,14 +255,7 @@ app.post('/signup', (req, res) => {
             return err
         }
     })
-    bot.sendMessage(chatId, text)
-    .then(() => {
-        console.log("повідомлення надіслано");
-        
-    })
-    .catch((err) => {
-        console.error(err);
-    })
+    bot_message(chat_id_administrator, text)
 })
 
 app.delete('/leads', (req, res) => {
@@ -245,3 +276,103 @@ app.listen(port, () => {
     console.log(`Север запущений на http://localhost:${port}`);
     
 })
+
+
+
+function bot_message(id, text) {
+    bot.sendMessage(id, text)
+    .then(() => {
+        console.log("повідомлення надіслано");
+        
+    })
+    .catch((err) => {
+        console.error(err);
+    })
+}
+function bot_message_order(name,price) {
+    bot.onText(new RegExp(name, 'i'), msg => {
+        chatId = msg.chat.id
+        order = {
+            stap: 'selects the quantity of the product',
+            data: {
+                name: name,
+            }
+        }
+        bot.sendMessage(chatId, 'Чудовий вибір! \nСкільки хочете?', {
+            reply_markup: {
+                inline_keyboard: [
+                    [{text: 'Скасувати замовлення', callback_data: 'cancel'}]
+                ]
+            }
+        })
+        let chat = bot.on('message', msg => { 
+            chatId = msg.chat.id
+            if(msg.text.toLocaleLowerCase() !== 'так') {
+                switch (order.stap) {
+                    case 'selects the quantity of the product':
+                        order.data.pieces = +msg.text
+                        order.stap = 'chooses the goods for whom'
+                        bot.sendMessage(chatId, 'Кому хочете відправити?', {
+                            reply_markup: {
+                                inline_keyboard: [
+                                    [{text: 'Скасувати замовлення', callback_data: 'cancel'}]
+                                ]
+                            }
+                        })
+                        break;
+                    case 'chooses the goods for whom':
+                        order.data.whom = msg.text
+                        order.stap = 'your email'
+                        bot.sendMessage(chatId, 'Ваш емейл', {
+                            reply_markup: {
+                                inline_keyboard: [
+                                    [{text: 'Скасувати замовлення', callback_data: 'cancel'}]
+                                ]
+                            }
+                        })
+                        break;
+                    case 'your email':
+                        order.data.email = msg.text
+                        order.stap = 'address'
+                        bot.sendMessage(chatId, 'Адреса', {
+                            reply_markup: {
+                                inline_keyboard: [
+                                    [{text: 'Скасувати замовлення', callback_data: 'cancel'}]
+                                ]
+                            }
+                        })
+                        break;
+                    case 'address':
+                        order.data.address = msg.text
+                        order.stap = 'address'
+                        let text =`Назва кави: ${order.data.name} \nКількість: ${order.data.pieces} \nКому хочете відправити: ${order.data.whom} \nВаш емейл: ${order.data.email} \nАдреса: ${order.data.address} \nСкільки буде коштувати: ${order.data.pieces * price}$`
+                        bot.sendMessage(chatId, text)
+                        order = {}
+                        fs.appendFile('orders.txt', text, err => {
+                            if (err) {
+                                return err
+                            }
+                        })
+                        bot_message(chat_id_administrator, text)
+
+
+                        break
+                    default:
+                        break;
+                }
+            } else {
+                order = {}
+                return
+            }
+        
+
+        })
+    
+        if (chat === undefined) {
+            return
+        }
+    })
+}
+
+
+    

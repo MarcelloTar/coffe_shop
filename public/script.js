@@ -258,5 +258,5 @@ function close_modal() {
     modal.classList.add('none')
     document.body.style.overflow = ''
 }
-
+    
 
