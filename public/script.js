@@ -209,6 +209,11 @@ const review_button = document.querySelector('.review_button');
 const rating_button = document.querySelectorAll('[data-rating]');
 let rating = 0
 
+
+const review_text = document.querySelector('#review_text');
+const name_review = document.querySelector('#name_review');
+const star_icon = document.querySelectorAll('.star_icon');
+const section7_slider_box_name_coffe = document.querySelector('.section7_slider_box_name_coffe');
 if (rating_button.length > 0) {
     rating_button.forEach(item => {
         item.addEventListener('click', () => {
@@ -228,7 +233,8 @@ if (rating_button.length > 0) {
 if (review_button) {
     review_button.addEventListener('click', () => {
         let select_value = document.querySelector('#select').value
-        if (select_value && rating !== 0) {
+        let name_review_input_value = document.querySelector('#name_review_input').value
+        if (name_review_input_value && select_value && rating !== 0) {
             const data_review = {
                 name_product: select_value,
                 review_text: document.querySelector('#review_textarea').value || 'нема',
@@ -244,9 +250,41 @@ if (review_button) {
             .catch(err => {
                 console.log('стаслась помивка', err);
             })
+
+            review_text.textContent = document.querySelector('#review_textarea').value
+            section7_slider_box_name_coffe.textContent = select_value
+            name_review.textContent = name_review_input_value
+            for (let i = 0; i < star_icon.length; i++) {
+                star_icon[i].classList.remove('activer_rating')
+            }
+            for (let i = 0; i < rating.length; i++) {
+                star_icon[i].classList.add('activer_rating')
+            }
         }
     })
 }
+
+
+
+
+
+
+
+if (window.innerWidth <= 900) {
+    const burger_menu_button = document.querySelector('.burger_menu_button');
+    const burger_menu = document.querySelector('.burger_menu');
+    const burger_menu_button_img = document.querySelector('.burger_menu_button img');
+    burger_menu_button.addEventListener('click', () => {
+        if (burger_menu.style.display == 'none') {
+            burger_menu.style.display = 'block'
+            burger_menu_button_img.src = './img/icon/x.svg'
+        } else {
+            burger_menu.style.display = 'none'
+            burger_menu_button_img.src = './img/icon/menu.svg'
+        }
+    })
+}
+
 
 
 

@@ -1,5 +1,8 @@
 
 
+ul{
+    list-style: none;
+}
 .header{
     background-color: #F4F1EE;
 }
@@ -18,15 +21,82 @@
 .header_menu_navigator a:hover{
     color: #363636;
 }
-.header_menu_navigator:first-child a:not(:last-child){
+.header_menu_navigator1 a:not(:last-child){
     margin-right: 55px;
 }
-.header_menu_navigator:last-child a:not(:last-child){
+.header_menu_navigator2 a:not(:last-child){
     margin-right: 40px;
 }
-.header_menu_navigator:last-child a:last-child{
+/* .header_menu_navigator2 a:last-child{
     margin-right: 72px;
-}
-.header_menu_navigator:last-child img:not(:last-child){
+} */
+.header_menu_navigator2 img:not(:last-child){
     margin-right: 38px;
+}
+
+
+/* .burger_menu_button{
+    display: none;
+} */
+.header_box_mobile{
+    display: none;
+}
+.registration_and_login_mobile{
+    display: none;
+}
+
+@media screen and (max-width: 1110px) {
+    .header_menu_navigator1{
+        padding-left: 5px;
+    }
+    .header_menu_navigator2{
+        padding-right: 5px;
+    }
+}
+
+@media screen and (max-width: 970px) {
+    .header_menu_navigator1 a:not(:last-child){
+        margin-right: 45px;
+    }
+    .header_menu_navigator2 a:not(:last-child){
+        margin-right: 30px;
+    }
+    .header_menu_navigator2 img:not(:last-child){
+        margin-right: 28px;
+    }
+}
+@media screen and (max-width: 900px) {
+    .header_menu_navigator{
+        display: none;
+    }
+    .registration_and_login_mobile{
+        display: inline;
+        margin-right: 20px;
+    }
+    .burger_menu_button{
+        display: inline;
+
+    }
+    .header_box_mobile{
+        padding-right: 10px;
+        display: block;
+    }
+    .header__container{
+        justify-content: space-between;
+        position: relative;
+    }
+    .burger_menu ul li{
+        text-align: end;
+    }
+    .burger_menu ul li:not(:last-child){
+        margin-bottom: 10px;
+    }
+    .burger_menu{
+        position: absolute;
+        left: 84%;
+        top: 53px;
+        background-color: #fff;
+        /* border: 1px solid #000; */
+        padding: 10px;
+    }
 }

@@ -7,30 +7,44 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.11.0/axios.min.js"></script>
-    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="../public/style/index.css">
 </head>
 <body>
     <div class="wrapper">
         <header class="header">
             <div class="header__container">
-                <div class="header_menu_navigator">
+                <div class="header_menu_navigator header_menu_navigator1">
                     <a href="/" data-aos="fade-down" data-aos-duration="2000">Home</a>
                     <a href="popular_product" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="100">Popular product</a>
                     <a href="customer" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="200">customer feedback</a>
                     
                 </div>
                 <img src="img/icon/logo.svg" alt="" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="300">
-                <div class="header_menu_navigator" data-aos="fade-down">
+                <div class="header_menu_navigator header_menu_navigator2" data-aos="fade-down">
                     <a href="best_product" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="400">best product</a>
                     <a href="blog" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="500">From our blog</a>
                     
                     <img src="img/icon/serch.svg" alt="" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="600">
-                    <a href="registration_and_login"><img src="img/icon/user.svg" alt="" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="700" id="user"></a>
-                    <img src="img/icon/menu.svg" alt="" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="700">
+                    <a href="registration_and_login"><img src="img/icon/user.svg" alt="" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="700" id="user"></a>            
                 </div>
+                <div class="header_box_mobile">
+                    <a href="registration_and_login" class="registration_and_login_mobile"><img src="img/icon/user.svg" alt="" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="700" id="user"></a> 
+                    <button data-aos="fade-down" data-aos-duration="2000" data-aos-delay="700" class="burger_menu_button"><img src="img/icon/menu.svg" alt=""></button>
+                    <div class="burger_menu" style="display: none;">
+                        <ul>
+                            <li><a href="/" data-aos="fade-down" data-aos-duration="2000">Home</a></li>
+                            <li><a href="popular_product">Popular product</a></li>
+                            <li><a href="customer">customer feedback</a></li>
+                            <li><a href="best_product">best product</a></li>
+                            <li><a href="blog">From our blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                
             </div>
         </header>
-        <main class="main">
+        <main class="main" style="display: none;">
             <section class="section1">
                 <div class="section1__container">
                     <div class="section1_right">
@@ -84,7 +98,7 @@
                 </div>
             </section> -->
         </main>
-      <footer class="footer">
+      <footer class="footer" style="display: none;">
             <div class="footer__container">
 
                 <div class="info_box">
@@ -113,7 +127,7 @@
                 </div>
             </div>
         </footer>
-        <footer class="footer" style="border-top: 0.5px solid #EAB665;">
+        <footer class="footer" style="border-top: 0.5px solid #EAB665; display: none;">
             <div class="footer2__container">
                 <p>ALL RIGHT RESERVED &copy; 2022</p>
                 
@@ -126,6 +140,6 @@
         });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.11.0/axios.min.js"></script>
-    <script src="script.js"></script>
+    <script src="../public/script.js"></script>
 </body>
 </html>

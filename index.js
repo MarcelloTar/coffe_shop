@@ -5,7 +5,6 @@ const fs = require('fs')
 const nodemailer = require('nodemailer')
 const TelegramBot = require('node-telegram-bot-api')
 const bodyParser = require('body-parser')
-const { rejects } = require('assert')
 
 const app = express()
 const port = process.env.PORT;

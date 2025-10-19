@@ -14,6 +14,7 @@
     flex-direction: column;
     align-items: center;
     position: relative;
+    width: 100%;
 }
 .section7_title{
     color: #1c1a1a;
@@ -36,6 +37,11 @@
     color: #1c1a1a;
     letter-spacing: 1px;
     margin-top: 8px;
+    margin-bottom: 10px;
+}
+.section7_slider_box_name_coffe{
+    margin-top: 0;
+    margin-bottom: 15px;
 }
 
 .section7_slider_box_button{
@@ -55,10 +61,10 @@
     border: 3px solid #a05729;
 }
 .section7_slider_box_button_prew{
-    left: -2.9%;
+    left: -32.1875px;
 }
 .section7_slider_box_button_next{
-    left: 98%;
+    left: 1087.8px;
 }
 
 
@@ -146,8 +152,10 @@
     top: 24%;
     right: 1%;
 }
-
-#select{
+.comment_product_name_user_box{
+    margin-bottom: 20px;
+}
+#select, #name_review_input{
     width: 580px;
     height: 46px;
     appearance: none;
@@ -170,7 +178,7 @@
     top: 3%;
     right: 1%;
 }
-
+    
 #review_textarea{
     width: 580px;
     height: 198px;
@@ -205,6 +213,12 @@
 .activer_rating{
     filter: brightness(0) saturate(100%) invert(59%) sepia(38%) saturate(964%) hue-rotate(350deg) brightness(97%) contrast(85%);
 }
+
+.star_icon{
+    width: 30px;
+}
+
+
 
 
 
